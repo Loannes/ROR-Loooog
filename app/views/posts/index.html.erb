@@ -6,6 +6,7 @@
       <th>Title</th>
       <th>User</th>
       <th>Contents</th>
+      <th>Tag</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +19,9 @@
         <td><%= post.title %></td>
         <td><%= post.user.email %></td>
         <td><%= post.contents %></td>
+        <% if post.tag_list.size > 0 %>
+          <td><div class='tag_list'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div></td>
+        <% end %>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
