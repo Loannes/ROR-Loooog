@@ -14,7 +14,12 @@ gem 'simple_form'
 # 개발 모드에서 이메일을 보내않고 브라우저에서 미리보기한는 젬
 gem 'letter_opener', group: :development
 
+# Tag Gem
+gem 'acts-as-taggable-on'
 
+
+# font gem
+gem "font-awesome-rails"
 
 
 

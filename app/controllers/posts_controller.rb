@@ -4,8 +4,11 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = Post.all
-    respond_with(@posts)
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -42,6 +45,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :user_id, :contents)
+      params.require(:post).permit(:title, :contents, :picture, :picture_cache, :tag_list)
     end
 end
