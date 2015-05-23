@@ -16,6 +16,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td>
+          <div class='image'><%= link_to(image_tag(post.picture_url(:thumb)), post) if post.picture? %></div>
+        </td>
         <td><%= post.title %></td>
         <td><%= post.user.email %></td>
         <td><%= post.contents %></td>
