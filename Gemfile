@@ -17,11 +17,14 @@ gem 'letter_opener', group: :development
 # Tag Gem
 gem 'acts-as-taggable-on'
 
-
 # font gem
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
+# image uploader
+gem 'carrierwave'
 
+# image size control
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.12'

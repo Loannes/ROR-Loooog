@@ -3,8 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.association :user %>
     <%= f.input :contents %>
+    <%= f.input :picture, as: :file %>
+    <%= f.hidden_field :picture_cache %>
 
     <%= f.input :tag_list, placeholder: '하나 이상의 태그는 콤마(,)로 구분하여 입력하세요.' %>
   </div>

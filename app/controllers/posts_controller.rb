@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     @post.save
     respond_with(@post)
   end
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :contents, :picture, :picture_cache, :tag_list)
+      params.require(:post).permit(:title, :user, :contents, :picture, :picture_cache, :tag_list)
     end
 end
