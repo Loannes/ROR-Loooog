@@ -5,6 +5,13 @@
   margin-bottom: .5em;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+    color: #FF826A;
+  }
+}
+
 a.tag {
   border:1px solid #eaeaea;
   border-radius:3px;
@@ -23,4 +30,26 @@ input[type='file'] {
   padding: .5em;
   border-radius: .3em;
   width: 100%;
+}
+
+.WF-bold {
+  font-family: 'Cuprum', sans-serif;
+}
+
+.WF-thin {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.header-date {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+  color: #aaaaaa;
+}
+
+.show-image{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }

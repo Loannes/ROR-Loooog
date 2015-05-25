@@ -1,24 +1,37 @@
 <p id="notice"><%= notice %></p>
+<hr>
+
+<div class="row">
+  <div class="col-xs-6 col-md-4 align-left">
+    <% if @post.tag_list.size > 0 %>
+      <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(@post.tag_list) %></div>
+    <% end %>
+  </div>
+  <div class="col-xs-6 col-md-4 align-center"><h1 class="WF-bold align-center"><%= @post.title %></h1></div>
+  <div class="col-xs-6 col-md-4 align-right header-date"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+</div>
+
+<div class="show-image">
+  <%= image_tag(@post.picture_url) if @post.picture? %>
+</div>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<p>
-  <strong>Contents:</strong>
+  <strong></strong>
   <%= @post.contents %>
 </p>
 
-<p>
-  <strong>Tag list</strong>
-  <%= tag_icons @post.tag_list %>
-</p>
+<hr>
+  첨부파일 : <%= link_to(@post.picture_url, @post) if @post.picture? %>
+<hr>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4 align-right">
+    <%= link_to 'Edit',edit_post_path(@post), class: 'btn btn-primary btn-lg' %>
+    <%= link_to 'Back', posts_path, class: 'btn btn-primary btn-lg' %>
+  </div>
+</div>
+
+<br>
+<br>

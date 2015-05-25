@@ -6,7 +6,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   process :resize_to_fit => [800, 800]
 
   version :thumb do
-    process :resize_to_fill => [200,200]
+    process :resize_to_fill => [100,100]
   end
 
   # 업로드 상단에 아래의 after 매크로를 추가한다.

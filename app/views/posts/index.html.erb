@@ -1,37 +1,24 @@
-<h1>Listing posts</h1>
+<h1 class="WF-thin">News</h1>
+<hr>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>User</th>
-      <th>Contents</th>
-      <th>Tag</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td>
-          <div class='image'><%= link_to(image_tag(post.picture_url(:thumb)), post) if post.picture? %></div>
-        </td>
-        <td><%= post.title %></td>
-        <td><%= post.user.email %></td>
-        <td><%= post.contents %></td>
-        <% if post.tag_list.size > 0 %>
-          <td><div class='tag_list'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div></td>
-        <% end %>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @posts.each do |post| %>
+  <div class="media">
+    <div class="media-left">
+      <%= link_to(image_tag(post.picture_url(:thumb)), post) if post.picture? %>
+    </div>
+    <div class="media-body">
+      <h2 class="media-heading WF-bold">
+        <%= link_to(post.title, post) %>
+        <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
+      </h2>
+      <span class="WF-thin"> <%= post.contents[0, 300] %></span>
+      <% if post.tag_list.size > 0 %>
+        <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+<% end %>
 
 <br>
 
