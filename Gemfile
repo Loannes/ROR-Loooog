@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 
 
+# markdown editor
+gem 'pagedown-bootstrap-rails'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'google-code-prettify-rails', '~> 1.1.0'
+
+
 # 회원인증 및 권한설정을 위한 젬
 gem 'devise'     # 회원가입 및 인증
 gem 'rolify'     # role 관리

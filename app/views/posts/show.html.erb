@@ -2,13 +2,13 @@
 <hr>
 
 <div class="row">
-  <div class="col-xs-6 col-md-4 align-left">
+  <div class="col-xs-3 col-md-3 align-left">
     <% if @post.tag_list.size > 0 %>
       <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(@post.tag_list) %></div>
     <% end %>
   </div>
-  <div class="col-xs-6 col-md-4 align-center"><h1 class="WF-bold align-center"><%= @post.title %></h1></div>
-  <div class="col-xs-6 col-md-4 align-right header-date"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+  <div class="col-xs-6 col-md-6 align-center"><h1 class="WF-bold align-center"><%= @post.title %></h1></div>
+  <div class="col-xs-3 col-md-3 align-right header-date"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
 </div>
 
 <div class="show-image">
@@ -17,10 +17,9 @@
   </center>
 </div>
 
-<p>
-  <strong></strong>
-  <%= @post.contents %>
-</p>
+<div class='markdown-preview'>
+  <%= @post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '') %>
+</div>
 
 <hr>
   첨부파일 : <%= link_to(@post.picture_url, @post) if @post.picture? %>

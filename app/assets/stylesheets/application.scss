@@ -10,6 +10,11 @@ $navbar-default-link-hover-bg: black;
 @import "font-awesome";
 @import "posts";
 
+@import "pagedown_bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "google-code-prettify-rails/prettify";
+
 body { padding-top: 60px; }
 
 .align-center {
