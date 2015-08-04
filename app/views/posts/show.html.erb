@@ -17,8 +17,8 @@
   </center>
 </div>
 
-<div class='markdown-preview'>
-  <%= @post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '') %>
+<div class='markdown-converter'>
+  <%= raw(BlueCloth.new(@post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) %>
 </div>
 
 <hr>
@@ -34,5 +34,9 @@
   </div>
 </div>
 
-<br>
-<br>
+<script>
+  $(".markdown-converter > p > img").parent(this).css("text-align", "center");
+  $(".markdown-converter > p > img").css("margin", "33px");
+  $(".markdown-converter > p > iframe").parent(this).css("text-align", "center");
+  $(".markdown-converter > p > iframe").css("margin", "33px");
+</script>

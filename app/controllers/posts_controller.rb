@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).order("CREATED_AT DESC")
     else
-      @posts = Post.all
+      @posts = Post.all.order("CREATED_AT DESC")
     end
   end
 

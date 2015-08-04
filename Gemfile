@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gem 'pagedown-bootstrap-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'google-code-prettify-rails', '~> 1.1.0'
+gem 'bluecloth'
 
 
 # 회원인증 및 권한설정을 위한 젬
@@ -75,3 +76,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+
+group :development do
+  gem 'web-console'
+end
