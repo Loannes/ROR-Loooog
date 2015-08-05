@@ -12,8 +12,8 @@
     </select>
 
     <%= f.input :contents, :as => :pagedown, :input_html => { :preview => true } %>
-    <%= f.input :picture, as: :file %>
-    <%= f.hidden_field :picture_cache %>
+    <%= f.input :file, as: :file %>
+    <%= f.hidden_field :file_cache %>
 
     <%= f.input :tag_list, placeholder: '하나 이상의 태그는 콤마(,)로 구분하여 입력하세요.' %>
   </div>

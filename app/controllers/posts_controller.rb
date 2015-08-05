@@ -28,6 +28,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    load_image_set
     @post.save
     respond_with(@post)
   end
@@ -48,7 +49,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :user, :contents, :picture, :picture_cache, :tag_list)
+      params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :tag_list)
     end
 
     def load_image_set

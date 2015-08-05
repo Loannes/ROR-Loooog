@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'nokogiri'
 
 # markdown editor
 gem 'pagedown-bootstrap-rails'

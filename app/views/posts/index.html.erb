@@ -4,7 +4,13 @@
 <% @posts.each do |post| %>
   <div class="media">
     <div class="media-left">
-      <%= link_to(image_tag(post.picture_url(:thumb)), post) if post.picture? %>
+      <%
+         doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
+         img_srcs = doc.css('img').map{ |i| i['src'] }[0]
+      %>
+      <% if img_srcs %>
+        <img alt="Thumb wallpaper1" src="<%= img_srcs %>" width="120" height="100">
+      <% end %>
     </div>
     <div class="media-body">
       <h2 class="media-heading WF-bold">

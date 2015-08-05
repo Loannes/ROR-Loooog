@@ -4,11 +4,11 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
-  process :resize_to_fit => [800, 800]
-
-  version :thumb do
-    process :resize_to_fill => [100,100]
-  end
+  # process :resize_to_fit => [800, 800]
+  #
+  # version :thumb do
+  #   process :resize_to_fill => [100,100]
+  # end
 
   # 업로드 상단에 아래의 after 매크로를 추가한다.
   after :remove, :delete_empty_upstream_dirs

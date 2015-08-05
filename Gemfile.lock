@@ -89,9 +89,12 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.6.1)
     mini_magick (4.2.7)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.11.2)
     mysql2 (0.3.18)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     pagedown-bootstrap-rails (2.1.2)
       railties (> 3.1)
@@ -174,6 +177,7 @@ DEPENDENCIES
   letter_opener
   mini_magick
   mysql2
+  nokogiri
   pagedown-bootstrap-rails
   rails (= 4.0.12)
   rolify
