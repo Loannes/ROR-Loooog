@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726083127) do
+ActiveRecord::Schema.define(version: 20150805082611) do
+
+  create_table "image_assets", force: true do |t|
+    t.string   "slug"
+    t.string   "lg"
+    t.string   "md"
+    t.string   "sm"
+    t.string   "xs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @image_asset.slug %>
+</p>
+
+<p>
+  <strong>Lg:</strong>
+  <%= @image_asset.lg %>
+  <%= image_tag(@image_asset.lg, class: "img-responsive") if @image_asset.lg? %>
+</p>
+
+<p>
+  <strong>Md:</strong>
+  <%= @image_asset.md %>
+  <%= image_tag(@image_asset.md, class: "img-responsive") if @image_asset.md? %>
+</p>
+
+<p>
+  <strong>Sm:</strong>
+  <%= @image_asset.sm %>
+  <%= image_tag(@image_asset.sm, class: "img-responsive") if @image_asset.sm? %>
+</p>
+
+<p>
+  <strong>Xs:</strong>
+  <%= @image_asset.xs %>
+  <%= image_tag(@image_asset.xs, class: "img-responsive") if @image_asset.xs? %>
+</p>
+
+<%= link_to 'Edit', edit_image_asset_path(@image_asset) %> |
+<%= link_to 'Back', image_assets_path %>

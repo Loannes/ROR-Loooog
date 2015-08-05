@@ -17,10 +17,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    load_image_set
     respond_with(@post)
   end
 
   def edit
+    load_image_set
   end
 
   def create
@@ -47,5 +49,9 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :user, :contents, :picture, :picture_cache, :tag_list)
+    end
+
+    def load_image_set
+      @image_asset = ImageAsset.all.order("CREATED_AT DESC")
     end
 end

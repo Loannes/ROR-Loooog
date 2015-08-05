@@ -1,0 +1,44 @@
+<h1>Image_Assets</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Slug</th>
+      <th>Lg</th>
+      <th>Md</th>
+      <th>Sm</th>
+      <th>Xs</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @image_assets.each do |image_asset| %>
+      <tr>
+        <td><%= image_asset.slug %></td>
+        <td>
+          <%= image_asset.lg_url(:thumb) %>
+          <%= link_to(image_tag(image_asset.lg_url(:thumb)), image_asset) if image_asset.lg? %>
+        </td>
+        <td>
+          <%= link_to(image_tag(image_asset.md_url(:thumb)), image_asset) if image_asset.md? %>
+        </td>
+        <td>
+          <%= link_to(image_tag(image_asset.sm_url(:thumb)), image_asset) if image_asset.sm? %>
+        </td>
+        <td>
+          <%= link_to(image_tag(image_asset.xs_url(:thumb)), image_asset) if image_asset.xs? %>
+        </td>
+        <td><%= link_to 'Show', image_asset %></td>
+        <td><%= link_to 'Edit', edit_image_asset_path(image_asset) %></td>
+        <td><%= link_to 'Destroy', image_asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Image asset', new_image_asset_path %>
