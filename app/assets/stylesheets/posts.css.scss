@@ -23,7 +23,7 @@
 a {
   &:hover {
     text-decoration: none;
-    color: #FF826A;
+    color: #676767;
   }
 }
 
@@ -47,13 +47,8 @@ input[type='file'] {
   width: 100%;
 }
 
-.WF-bold {
-  font-family: 'Cuprum', sans-serif;
-}
-
-.WF-thin {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+.home-heading {
+  font-size: 18pt;
 }
 
 .header-date {

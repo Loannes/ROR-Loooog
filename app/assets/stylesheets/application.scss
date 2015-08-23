@@ -8,6 +8,7 @@ $navbar-default-link-hover-bg: black;
 
 @import 'bootstrap';
 @import "font-awesome";
+@import "home";
 @import "posts";
 @import "image_assets";
 
@@ -40,6 +41,15 @@ body {
 
 .align-right {
   text-align: right;
+}
+
+.WF-bold {
+  font-family: 'Cuprum', sans-serif;
+}
+
+.WF-thin {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 // Pagedown Editor

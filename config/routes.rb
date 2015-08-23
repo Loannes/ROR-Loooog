@@ -1,10 +1,11 @@
 Loooog::Application.routes.draw do
+
+  root "home#index"
+
   resources :image_assets
-
   resources :posts
-
   devise_for :users
-  root "welcome#index"
+
 
 
 
