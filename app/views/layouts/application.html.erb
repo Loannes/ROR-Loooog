@@ -16,13 +16,7 @@
 <div class="navbar navbar-default navbar-fixed-top loooog-nav" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand WF-bold logo" href="<%= root_path %>">Loooog</a>
+      <a class="navbar-brand WF-thin logo" href="<%= root_path %>">Loooog</a>
     </div>
     <!--<div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -48,9 +42,20 @@
   </div>
 </div>
 
-<div>
+<div class="loooog-container">
   <%= render partial: "shared/flash_messages", flash: flash %>
   <%= yield %>
 </div> <!-- /container -->
+
+<div id="footer" class="navbar-default">
+  <div class="footer-container">
+    <p class="footer-text WF-thin">
+      More ways to shop: Visit an Apple Store, call 1-800-MY-APPLE, or find a reseller.
+      United States<br>
+      Copyright © 2015 Apple Inc. All rights reserved.
+    </p>
+  </div>
+</div>
+
 </body>
 </html>

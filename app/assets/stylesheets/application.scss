@@ -4,7 +4,7 @@ $navbar-default-bg: #ffffff;
 $navbar-default-link-color: gray;
 $navbar-default-link-active-color: $light-orange;
 $navbar-default-link-hover-color: white;
-$navbar-default-link-hover-bg: black;
+$navbar-default-link-hover-bg: 333333;
 
 @import 'bootstrap';
 @import "font-awesome";
@@ -19,11 +19,11 @@ $navbar-default-link-hover-bg: black;
 
 body {
   padding-top: 60px;
-  padding-bottom: 60px;
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 20px;
+  padding-left: 70px;
 }
 
 .loooog-nav {
@@ -51,6 +51,38 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
+
+.loooog-text {
+  @media all and (min-width:100px) and (max-width:1024px){
+    font-size: 10pt;
+  }
+}
+
+.loooog-container {
+  padding-bottom: 20px;
+}
+
+#footer {
+  display: table;
+  background-color: #f2f2f2;
+  bottom: 0;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.footer-container {
+  display: table-cell;
+  vertical-align: middle;
+  color: #BBBBBB;
+}
+
+.footer-text {
+  font-size: 9pt;
+}
+
 
 // Pagedown Editor
 #wmd-button-bar-content {

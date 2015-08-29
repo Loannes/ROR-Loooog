@@ -13,11 +13,11 @@
       <% end %>
     </div>
     <div class="media-body">
-      <h2 class="media-heading WF-bold">
+      <h2 class="media-heading WF-bold loooog-text">
         <%= link_to(post.title, post) %>
         <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
       </h2>
-      <span class="WF-thin"> <%= post.contents[0, 300] %></span>
+      <span class="WF-thin loooog-text"> <%= post.contents[0, 300] %></span>
       <% if post.tag_list.size > 0 %>
         <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
       <% end %>

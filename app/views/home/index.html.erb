@@ -1,7 +1,7 @@
 <%= image_tag(@top_banner.lg, class: 'main_top') if @top_banner.lg? %>
 
 <% @posts.each_with_index do |post, index| %>
-  <div class="home-list">
+  <div class="home-list visible-lg visible-md">
     <div class="home-list-image">
       <%
          doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
@@ -13,14 +13,50 @@
     </div>
     <div class="home-list-body">
       <div class="home-list-body-text">
-        <h2 class="home-heading WF-bold">
+        <h2 class="home-heading WF-thin loooog-text">
           <%= link_to(post.title, post) %>
           <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
         </h2>
-        <span class="WF-thin"> <%= post.contents[0, 300] %></span>
+        <span class="WF-thin loooog-text" id="post-contents"> <%= post.contents[0, 300] %>...</span>
         <% if post.tag_list.size > 0 %>
           <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
         <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!--tablet Phone size-->
+  <div class="home-list visible-sm">
+    <div class="home-list-image">
+      <% if img_srcs %>
+        <div class="home-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+      <% end %>
+    </div>
+    <div class="home-list-body">
+      <div class="home-list-body-text">
+        <h2 class="home-heading WF-thin loooog-text">
+          <%= link_to(post.title, post) %>
+        </h2>
+        <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small><br>
+        <span class="WF-thin loooog-text" id="post-contents"> <%= post.contents[0, 200] %>...</span>
+      </div>
+    </div>
+  </div>
+
+  <!--Smart Phone size-->
+  <div class="home-list visible-xs">
+    <div class="home-list-image">
+      <% if img_srcs %>
+        <div class="home-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+      <% end %>
+    </div>
+    <div class="home-list-body">
+      <div class="home-list-body-text">
+        <h2 class="home-heading WF-thin loooog-text">
+          <%= link_to(post.title, post) %>
+          <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
+        </h2>
+        <span class="WF-thin loooog-text" id="post-contents"> <%= post.contents[0, 90] %>...</span>
       </div>
     </div>
   </div>
