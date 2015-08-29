@@ -1,0 +1,39 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.home-list {
+  @media all and (min-width:1025px){
+
+  }
+  display: table;
+  margin-top: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.home-list-image {
+  display: table-cell;
+  width: 10%;
+}
+
+.home-list-background-image {
+  @media all and (min-width:1025px){
+    height: 200px;
+  }
+  height: 100px;
+  width: 100%;
+  background-size: cover;
+}
+
+.home-list-body {
+  width: 30%;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.home-list-body-text {
+  vertical-align: top;
+  padding-left: 1%;
+}
