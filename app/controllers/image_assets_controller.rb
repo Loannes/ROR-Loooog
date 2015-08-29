@@ -1,6 +1,8 @@
 class ImageAssetsController < ApplicationController
   before_action :set_image_asset, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!
+
   respond_to :html
 
   def index
