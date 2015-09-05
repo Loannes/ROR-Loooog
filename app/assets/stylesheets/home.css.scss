@@ -9,11 +9,15 @@
   }
   display: table;
   margin-top: 1px;
-  margin-left: 10%;
-  margin-right: 10%;
-  @media all and (min-width:100px) and (max-width:1024px){
-    margin-left: 1px;
-    margin-right: 1px;
+  margin-left: 5%;
+  margin-right: 5%;
+  @media all and (min-width:500px) and (max-width:1024px){
+    margin-left: -45px;
+    margin-right: -45px;
+  }
+  @media all and (min-width:100px) and (max-width:500px){
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
