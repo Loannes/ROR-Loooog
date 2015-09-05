@@ -4,6 +4,10 @@
 
 
 .main_top {
+  margin-top: -1%;
+  @media all and (min-width:100px) and (max-width:1024px){
+    margin-top: -3%;
+  }
   margin-left: -10%;
   margin-right: -10%;
   width: 120%;
