@@ -43,7 +43,9 @@
 
 <div class="loooog-container">
   <%= render partial: "shared/flash_messages", flash: flash %>
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </div> <!-- /container -->
 
 <div id="footer" class="navbar-default">

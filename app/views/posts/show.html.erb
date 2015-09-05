@@ -1,45 +1,43 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
-  <div class="row post-top visible-lg visible-md visible-sm">
-    <div class="col-xs-3 col-md-3 align-left">
-      <% if @post.tag_list.size > 0 %>
-        <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(@post.tag_list) %></div>
-      <% end %>
-    </div>
-    <div class="col-xs-6 col-md-6 align-center visible-lg visible-md"><h1 class="WF-thin align-center"><%= @post.title %></h1></div>
-    <div class="col-xs-6 col-md-6 align-center visible-sm"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>
-    <div class="col-xs-3 col-md-3 align-right header-date visible-lg visible-md visible-sm"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+<div class="row post-top visible-lg visible-md visible-sm">
+  <div class="col-xs-3 col-md-3 align-left">
+    <% if @post.tag_list.size > 0 %>
+      <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(@post.tag_list) %></div>
+    <% end %>
+  </div>
+  <div class="col-xs-6 col-md-6 align-center visible-lg visible-md"><h1 class="WF-thin align-center"><%= @post.title %></h1></div>
+  <div class="col-xs-6 col-md-6 align-center visible-sm"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>
+  <div class="col-xs-3 col-md-3 align-right header-date visible-lg visible-md visible-sm"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+</div>
+
+<div class="row post-top visible-xs">
+  <div class="col-xs-6 col-md-6 align-left">
+    <% if @post.tag_list.size > 0 %>
+      <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(@post.tag_list) %></div>
+    <% end %>
   </div>
 
-  <div class="row post-top visible-xs">
-    <div class="col-xs-6 col-md-6 align-left">
-      <% if @post.tag_list.size > 0 %>
-        <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(@post.tag_list) %></div>
-      <% end %>
-    </div>
-
-    <div class="col-xs-6 col-md-6 align-right header-date"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
-  </div>
-  <div class="row post-top visible-xs" style="margin-top:-30px;">
-    <div class="col-xs-12 col-md-12 align-center"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>
-  </div>
+  <div class="col-xs-6 col-md-6 align-right header-date"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+</div>
+<div class="row post-top visible-xs" style="margin-top:-30px;">
+  <div class="col-xs-12 col-md-12 align-center"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>
+</div>
 
 
-  <div class='markdown-converter'>
-    <%= raw(BlueCloth.new(@post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) %>
-  </div>
+<div class='markdown-converter'>
+  <%= raw(BlueCloth.new(@post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) %>
+</div>
 
-  <hr>
-    첨부파일 : <%= link_to(@post.file_url, @post) if @post.file? %>
-  <hr>
+<hr>
+  첨부파일 : <%= link_to(@post.file_url, @post) if @post.file? %>
+<hr>
 
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4 align-right">
-      <%= link_to 'Edit',edit_post_path(@post) %> |
-      <%= link_to 'Back', posts_path %>
-    </div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4 align-right">
+    <%= link_to 'Edit',edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
   </div>
 </div>
 
