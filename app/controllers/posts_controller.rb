@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :authenticate_user!, except: [ :show ]
 
   respond_to :html
 
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :tag_list)
+      params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :state, :tag_list)
     end
 
     def load_image_set

@@ -1,6 +1,7 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .tag_list {
   margin-bottom: .5em;
 }
@@ -62,4 +63,8 @@ input[type='file'] {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 50px;
+}
+
+.table th {
+  text-align: center;
 }

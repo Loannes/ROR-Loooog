@@ -1,3 +1,4 @@
+
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
 
@@ -16,6 +17,7 @@
     <%= f.hidden_field :file_cache %>
 
     <%= f.input :tag_list, placeholder: '하나 이상의 태그는 콤마(,)로 구분하여 입력하세요.' %>
+    <%= f.input :state, collection: [[:show, :show], [:hide, :hide]] %>
   </div>
 
   <div class="form-actions">

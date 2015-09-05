@@ -1,31 +1,45 @@
-<h1 class="WF-thin">News</h1>
-<hr>
-
-<% @posts.each do |post| %>
-  <div class="media">
-    <div class="media-left">
-      <%
-         doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
-         img_srcs = doc.css('img').map{ |i| i['src'] }[0]
-      %>
-      <% if img_srcs %>
-        <img alt="Thumb wallpaper1" src="<%= img_srcs %>" width="120" height="100">
-      <% end %>
-    </div>
-    <div class="media-body">
-      <h2 class="media-heading WF-bold loooog-text">
-        <%= link_to(post.title, post) %>
-        <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
-      </h2>
-      <span class="WF-thin loooog-text"> <%= post.contents[0, 300] %></span>
-      <% if post.tag_list.size > 0 %>
-        <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
-      <% end %>
-    </div>
-  </div>
-  <hr>
-<% end %>
-
 <br>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>img</th>
+      <th>title</th>
+      <th width="300">contents</th>
+      <th>tag</th>
+      <th width="150">regist date</th>
+      <th>state</th>
+      <th>function</th>
+    </tr>
+    </thead>
+    <% @posts.each_with_index do |post, index| %>
+      <tr>
+        <td><%= post.id %></td>
+        <td>
+          <%
+             doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
+             img_srcs = doc.css('img').map{ |i| i['src'] }[0]
+          %>
+          <% if img_srcs %>
+            <div class="post-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+          <% end %>
+        </td>
+        <td><%= link_to(post.title, post) %></td>
+        <td><%= post.contents[0, 100] %></td>
+        <td><%= post.tag_list %></td>
+        <td><%= post.created_at.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= post.state %></td>
+        <td>
 
-<%= link_to 'New Post', new_post_path %>
+          <%= link_to raw("<span class='glyphicon glyphicon-edit' aria-hidden='true'></span>"), edit_post_path(post) %> |
+          <%= link_to raw("<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>"), post_path(post), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+        </td>
+      </tr>
+    <% end  %>
+  </table>
+
+  <%= link_to 'New Post', new_post_path %>
+
+</div>
+
