@@ -3,4 +3,6 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   mount_uploader :file, PictureUploader
+
+  scope :show, -> { where(state: :show) }
 end

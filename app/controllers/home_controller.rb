@@ -7,9 +7,9 @@ class HomeController < PostsController
     @top_banner = ImageAsset.where(slug: "main_top_banner").first
 
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).order("CREATED_AT DESC")
+      @posts = Post.show.tagged_with(params[:tag]).order("CREATED_AT DESC")
     else
-      @posts = Post.all.order("CREATED_AT DESC")
+      @posts = Post.show.order("CREATED_AT DESC")
     end
   end
 
