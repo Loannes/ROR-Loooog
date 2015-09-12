@@ -1,6 +1,6 @@
-class PostsController < ApplicationController
+class SinController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :authenticate_user!
 
   respond_to :html
 
@@ -44,16 +44,19 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
+
+
+
   private
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    def post_params
-      params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :state, :tag_list)
-    end
+  def post_params
+    params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :state, :tag_list)
+  end
 
-    def load_image_set
-      @image_asset = ImageAsset.all.order("CREATED_AT DESC")
-    end
+  def load_image_set
+    @image_asset = ImageAsset.all.order("CREATED_AT DESC")
+  end
 end

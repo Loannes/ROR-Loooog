@@ -5,7 +5,7 @@ Loooog::Application.routes.draw do
   resources :image_assets
   resources :posts
   devise_for :users, :skip => [:registrations]
-
+  resources :sin
 
 
 

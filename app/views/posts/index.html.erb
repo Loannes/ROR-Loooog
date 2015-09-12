@@ -1,44 +1,62 @@
-<br>
 
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th>id</th>
-    <th>img</th>
-    <th>title</th>
-    <th width="300">contents</th>
-    <th>tag</th>
-    <th width="150">regist date</th>
-    <th>state</th>
-    <th>function</th>
-  </tr>
-  </thead>
-  <% @posts.each_with_index do |post, index| %>
-    <tr>
-      <td><%= post.id %></td>
-      <td>
-        <%
-           doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
-           img_srcs = doc.css('img').map{ |i| i['src'] }[0]
-        %>
-        <% if img_srcs %>
-          <div class="post-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+<% @posts.each_with_index do |post, index| %>
+  <div class="home-list visible-lg visible-md">
+    <div class="home-list-image">
+      <%
+         doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
+         img_srcs = doc.css('img').map{ |i| i['src'] }[0]
+      %>
+      <% if img_srcs %>
+        <div class="home-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+      <% end %>
+    </div>
+    <div class="home-list-body">
+      <div class="home-list-body-text">
+        <h2 class="home-heading WF-thin loooog-text">
+          <%= link_to(post.title, post) %>
+          <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
+        </h2>
+        <span class="WF-thin loooog-text" id="post-contents"> <%= post.contents[0, 300] %>...</span>
+        <% if post.tag_list.size > 0 %>
+          <div class='tag_list WF-thin'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
         <% end %>
-      </td>
-      <td><%= link_to(post.title, post) %></td>
-      <td><%= post.contents[0, 100] %></td>
-      <td><%= post.tag_list %></td>
-      <td><%= post.created_at.strftime('%Y-%m-%d %H:%M') %></td>
-      <td><%= post.state %></td>
-      <td>
+      </div>
+    </div>
+  </div>
 
-        <%= link_to raw("<span class='glyphicon glyphicon-edit' aria-hidden='true'></span>"), edit_post_path(post) %> |
-        <%= link_to raw("<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>"), post_path(post), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
-      </td>
-    </tr>
-  <% end  %>
-</table>
+  <!--tablet Phone size-->
+  <div class="home-list visible-sm">
+    <div class="home-list-image">
+      <% if img_srcs %>
+        <div class="home-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+      <% end %>
+    </div>
+    <div class="home-list-body">
+      <div class="home-list-body-text">
+        <h2 class="home-heading WF-thin loooog-text">
+          <%= link_to(post.title, post) %>
+        </h2>
+        <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small><br>
+        <span class="WF-thin loooog-text" id="post-contents"> <%= post.contents[0, 200] %>...</span>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'New Post', new_post_path %>
-
-
+  <!--Smart Phone size-->
+  <div class="home-list visible-xs">
+    <div class="home-list-image">
+      <% if img_srcs %>
+        <div class="home-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+      <% end %>
+    </div>
+    <div class="home-list-body">
+      <div class="home-list-body-text">
+        <h2 class="home-heading WF-thin loooog-text">
+          <%= link_to(post.title, post) %>
+          <small class="header-date"> <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> </small>
+        </h2>
+        <span class="WF-thin loooog-text" id="post-contents"> <%= post.contents[0, 90] %>...</span>
+      </div>
+    </div>
+  </div>
+<% end %>
