@@ -1,4 +1,4 @@
-<%= image_tag(@top_banner.lg, class: 'main_top') if @top_banner.lg? %>
+<%= image_tag(@top_banner.lg, class: 'main_top') unless @top_banner.nil? %>
 
 <% @posts.each_with_index do |post, index| %>
   <div class="home-list visible-lg visible-md">
