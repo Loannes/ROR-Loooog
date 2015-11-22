@@ -80,6 +80,32 @@ end
 
 
 
+
+
+
+# Use unicorn as the app server
+gem 'unicorn'
+
+# Use Capistrano for deployment
+gem 'capistrano-rails', '1.1.1', group: :development
+
+# 추가할 젬
+gem 'capistrano-rbenv', '2.0.2', group: :development
+gem 'capistrano-rbenv-install', '1.0.0', group: :development
+gem 'capistrano-unicorn-nginx', '2.0.0', group: :development
+gem 'capistrano-rails-console'
+gem 'capistrano-rails-collection'
+gem 'capistrano-rails-tail-log'
+
+group :production do
+  gem 'rb-readline'
+end
+
+# 데이터베이스 젬 그룹변경 및 추가
+gem 'sqlite3', group: :development
+gem 'mysql2', group: :production
+
+
 group :development do
   gem 'web-console'
 end

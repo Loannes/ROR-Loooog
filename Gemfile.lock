@@ -43,6 +43,32 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.1.4)
+    capistrano (3.4.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (~> 1.3)
+    capistrano-bundler (1.1.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rails (1.1.1)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rails-collection (0.0.3)
+      capistrano-rails (~> 1.1.0)
+    capistrano-rails-console (1.0.0)
+      capistrano (>= 3.1.0, < 4.0.0)
+    capistrano-rails-tail-log (0.1.0)
+      capistrano (>= 3.0)
+      capistrano-rails
+    capistrano-rbenv (2.0.2)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
+    capistrano-rbenv-install (1.0.0)
+      capistrano (>= 3.0)
+      capistrano-rbenv (>= 2.0)
+    capistrano-unicorn-nginx (2.0.0)
+      capistrano (>= 3.1)
+      sshkit (>= 1.2.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -55,6 +81,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    colorize (0.7.7)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -81,6 +108,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kgio (2.10.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -93,6 +121,9 @@ GEM
     minitest (4.7.5)
     multi_json (1.11.2)
     mysql2 (0.3.18)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.0.1)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
@@ -114,7 +145,9 @@ GEM
       activesupport (= 4.0.12)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.15.0)
     rake (10.4.2)
+    rb-readline (0.5.3)
     rdoc (4.2.0)
       json (~> 1.4)
     responders (1.1.2)
@@ -141,6 +174,11 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sqlite3 (1.3.10)
+    sshkit (1.7.1)
+      colorize (>= 0.7.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -150,6 +188,10 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.9.0)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.0.0.beta4)
@@ -166,6 +208,13 @@ DEPENDENCIES
   authority
   bluecloth
   bootstrap-sass
+  capistrano-rails (= 1.1.1)
+  capistrano-rails-collection
+  capistrano-rails-console
+  capistrano-rails-tail-log
+  capistrano-rbenv (= 2.0.2)
+  capistrano-rbenv-install (= 1.0.0)
+  capistrano-unicorn-nginx (= 2.0.0)
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
@@ -180,10 +229,13 @@ DEPENDENCIES
   nokogiri
   pagedown-bootstrap-rails
   rails (= 4.0.12)
+  rb-readline
   rolify
   sass-rails (~> 4.0.2)
   sdoc
   simple_form
+  sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  unicorn
   web-console

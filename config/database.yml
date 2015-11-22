@@ -34,6 +34,6 @@ production:
   encoding: utf8
   database: loooog_production
   pool: 5
-  username: root
+  username: deployer
   password:
   host: localhost
