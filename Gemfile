@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.5'
 
 
 gem 'nokogiri'
@@ -80,6 +81,8 @@ end
 
 
 
+gem 'puma'
+gem 'rails_12factor'
 
 
 
@@ -99,12 +102,12 @@ gem 'capistrano-rails-tail-log'
 
 group :production do
   gem 'rb-readline'
+  gem 'pg'
 end
 
 # 데이터베이스 젬 그룹변경 및 추가
 gem 'sqlite3', group: :development
-gem 'mysql2', group: :production
-
+# gem 'mysql2', group: :production
 
 group :development do
   gem 'web-console'
