@@ -79,12 +79,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-
 gem 'puma'
-gem 'rails_12factor'
-
-
 
 # Use unicorn as the app server
 gem 'unicorn'
@@ -101,6 +96,7 @@ gem 'capistrano-rails-collection'
 gem 'capistrano-rails-tail-log'
 
 group :production do
+  gem 'rails_12factor'
   gem 'rb-readline'
   gem 'pg'
 end
