@@ -30,16 +30,10 @@ test:
   host: localhost
 
 production:
-  database: loooog_production
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
+  database: loooog_production
   pool: 5
-
-#production:
-#  adapter: mysql2
-#  encoding: utf8
-#  database: loooog_production
-#  pool: 5
-#  username: deployer
-#  password:
-#  host: localhost
+  username: deployer
+  password:
+  host: localhost

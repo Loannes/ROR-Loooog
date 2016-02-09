@@ -79,7 +79,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'puma'
+
+
+
+
 
 # Use unicorn as the app server
 gem 'unicorn'
@@ -96,14 +99,13 @@ gem 'capistrano-rails-collection'
 gem 'capistrano-rails-tail-log'
 
 group :production do
-  gem 'rails_12factor'
   gem 'rb-readline'
-  gem 'pg'
 end
 
 # 데이터베이스 젬 그룹변경 및 추가
 gem 'sqlite3', group: :development
-# gem 'mysql2', group: :production
+gem 'mysql2', group: :production
+
 
 group :development do
   gem 'web-console'
