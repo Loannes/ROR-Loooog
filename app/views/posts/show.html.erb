@@ -23,10 +23,7 @@
   <div class="col-xs-12 col-md-12 align-center"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>
 </div>
 
-
-<div class='markdown-converter'>
-  <%= raw(BlueCloth.new(@post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) %>
-</div>
+<%= markdown(@post.contents) %>
 
 <hr>
   첨부파일 : <%= link_to(@post.file_url, @post) if @post.file? %>

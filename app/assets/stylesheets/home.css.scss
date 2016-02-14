@@ -23,7 +23,8 @@
 
 .home-list-image {
   display: table-cell;
-  width: 10%;
+  width: 20%;
+  max-width: 20%;
 }
 
 .home-list-background-image {
@@ -46,7 +47,7 @@
 }
 
 .home-list-body {
-  width: 30%;
+  width: 80%;
   display: table-cell;
   vertical-align: top;
 }

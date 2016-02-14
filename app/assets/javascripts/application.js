@@ -16,9 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
-//= require pagedown_bootstrap
-//= require google-code-prettify-rails/prettify
-
 $(document).ready(function() {
 
 });

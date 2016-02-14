@@ -31,17 +31,17 @@ class SinController < ApplicationController
     @post.user = current_user
     load_image_set
     @post.save
-    respond_with(@post)
+    redirect_to sin_index_path
   end
 
   def update
     @post.update(post_params)
-    respond_with(@post)
+    redirect_to sin_index_path
   end
 
   def destroy
     @post.destroy
-    respond_with(@post)
+    redirect_to sin_index_path
   end
 
 
