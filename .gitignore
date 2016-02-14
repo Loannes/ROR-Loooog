@@ -31,3 +31,4 @@ vendor/INIpay50/log
 *.sublime-project
 *.sublime-workspace
 
+/db/dump/

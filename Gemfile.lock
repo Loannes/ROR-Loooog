@@ -94,11 +94,6 @@ GEM
     execjs (2.6.0)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-    font-awesome-sass (4.2.2)
-      sass (~> 3.2)
-    google-code-prettify-rails (1.1.0)
-      railties (>= 3.2.0.beta, < 5.0)
-      thor (~> 0.14)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (1.5.3)
@@ -127,8 +122,6 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
-    pagedown-bootstrap-rails (2.1.2)
-      railties (> 3.1)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -150,6 +143,7 @@ GEM
     rb-readline (0.5.3)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.0.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rolify (4.0.0)
@@ -219,17 +213,15 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
-  font-awesome-sass (~> 4.2.0)
-  google-code-prettify-rails (~> 1.1.0)
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
   mini_magick
   mysql2
   nokogiri
-  pagedown-bootstrap-rails
   rails (= 4.0.12)
   rb-readline
+  redcarpet (~> 3.0.0)
   rolify
   sass-rails (~> 4.0.2)
   sdoc

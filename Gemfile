@@ -1,14 +1,13 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
-
 gem 'nokogiri'
 
-# markdown editor
-gem 'pagedown-bootstrap-rails'
-gem 'font-awesome-sass', '~> 4.2.0'
-gem 'google-code-prettify-rails', '~> 1.1.0'
 gem 'bluecloth'
+
+# Github markdown editor
+gem 'redcarpet', '~> 3.0.0'
+
 
 
 # 회원인증 및 권한설정을 위한 젬
