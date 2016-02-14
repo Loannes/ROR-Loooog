@@ -12,11 +12,11 @@
   margin-bottom: 30px;
 }
 
-.p-parent-img {
-  text-align: center;
+p {
+  width: 100%;
 }
 
-.post-img {
+p > img {
   max-width: 90%;
   margin: 3%;
 }
