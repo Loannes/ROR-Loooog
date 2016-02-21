@@ -37,9 +37,6 @@ gem 'mini_magick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.12'
 
-# Use mysql as the database for Active Record
-gem 'mysql2'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -66,23 +63,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-
-
-
-
-
 # Use unicorn as the app server
 gem 'unicorn'
 
@@ -99,13 +79,11 @@ gem 'capistrano-rails-tail-log'
 
 group :production do
   gem 'rb-readline'
+  gem 'mysql2', '~> 0.3.18'
 end
 
 # 데이터베이스 젬 그룹변경 및 추가
-gem 'sqlite3', group: :development
-gem 'mysql2', group: :production
-
-
 group :development do
   gem 'web-console'
+  gem 'mysql2', '~> 0.3.18'
 end
