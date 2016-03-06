@@ -26,7 +26,9 @@
         <% end %>
       </td>
       <td><%= link_to(post.title, post) %></td>
-      <td><%= post.contents[0, 100] %></td>
+      <td>
+        <%= truncate( strip_tags( markdown(post.contents) ), length: 100) %>
+      </td>
       <td><%= post.tag_list %></td>
       <td><%= post.created_at.strftime('%Y-%m-%d %H:%M') %></td>
       <td><%= post.state %></td>
