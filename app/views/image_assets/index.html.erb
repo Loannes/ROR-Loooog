@@ -19,16 +19,16 @@
       <tr>
         <td><%= image_asset.slug %></td>
         <td>
-          <%= link_to(image_tag(image_asset.lg, class: 'thumb_img'), image_asset) if image_asset.lg? %>
+          <%= link_to(image_tag(image_asset.lg, class: 'thumb-img'), image_asset) if image_asset.lg? %>
         </td>
         <td>
-          <%= link_to(image_tag(image_asset.md, class: 'thumb_img'), image_asset) if image_asset.md? %>
+          <%= link_to(image_tag(image_asset.md, class: 'thumb-img'), image_asset) if image_asset.md? %>
         </td>
         <td>
-          <%= link_to(image_tag(image_asset.sm, class: 'thumb_img'), image_asset) if image_asset.sm? %>
+          <%= link_to(image_tag(image_asset.sm, class: 'thumb-img'), image_asset) if image_asset.sm? %>
         </td>
         <td>
-          <%= link_to(image_tag(image_asset.xs, class: 'thumb_img'), image_asset) if image_asset.xs? %>
+          <%= link_to(image_tag(image_asset.xs, class: 'thumb-img'), image_asset) if image_asset.xs? %>
         </td>
         <td><%= link_to 'Show', image_asset %></td>
         <td><%= link_to 'Edit', edit_image_asset_path(image_asset) %></td>

@@ -1,7 +1,7 @@
-<%= image_tag(@top_banner.lg, class: 'main_top') unless @top_banner.nil? %>
+<%= image_tag(@top_banner.lg, class: 'main-top') unless @top_banner.nil? %>
 
 <% @posts.each_with_index do |post, index| %>
-  <div class="home-list visible-lg visible-md">
+  <div class="home-list visible-lg visible-md visible-sm">
     <div class="home-list-image">
       <%
          doc = Nokogiri::HTML( raw(BlueCloth.new(post.contents.gsub(/<[^(>|\/)]*?script.*?>([^<]*?)<.*?\/script.*?>/, '')).to_html) )
@@ -26,7 +26,7 @@
   </div>
 
   <!--Smart Phone size-->
-  <div class="home-list visible-xs visible-sm">
+  <div class="home-list visible-xs ">
     <div class="home-list-body">
       <div class="home-list-body-text">
         <h4 class="WF-thin loooog-text">

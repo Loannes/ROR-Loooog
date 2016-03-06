@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.post {
+  background-color: #FFFFFF;
+  display: table;
+
+  margin: 0px 0px 0px 0px;
+
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+  word-break:break-all;
+}
+
 .tag_list {
   margin-bottom: .5em;
 }

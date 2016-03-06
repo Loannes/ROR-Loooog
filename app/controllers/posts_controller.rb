@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post.view_count += 1
     @post.save
 
-    respond_with(@post)
+    render layout: 'post'
   end
 
   def new

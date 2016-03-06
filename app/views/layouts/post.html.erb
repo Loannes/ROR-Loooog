@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loooog</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+</head>
+<body>
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top loooog-nav" role="navigation">
+  <div class="container">
+    <div class="navbar-header" style="align:center;">
+      <a class="navbar-brand WF-thin logo" href="<%= root_path %>">Loooog</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Posts", posts_path %></li>
+          <li><%= link_to "ImageAssets", image_assets_path %></li>
+          <li><%= link_to "admin", sin_index_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%#= link_to "My Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%#= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="loooog-container">
+  <%= render partial: "shared/flash_messages", flash: flash %>
+  <div class="container">
+    <%= yield %>
+  </div>
+</div> <!-- /container -->
+
+<div id="footer" class="navbar-default">
+  <div class="footer-container">
+    <p class="footer-text WF-thin">
+      notice maker use site, but angry fell, send mail<br>
+      Copyright © 2015 Intelligence company. All rights reserved.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
