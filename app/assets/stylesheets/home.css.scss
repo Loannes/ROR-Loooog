@@ -4,21 +4,15 @@
 
 
 .home-list {
-  @media all and (min-width:1025px){
-
-  }
+  background-color: #FFFFFF;
   display: table;
-  margin-top: 1px;
-  margin-left: 5%;
-  margin-right: 5%;
-  @media all and (min-width:500px) and (max-width:1024px){
-    margin-left: -45px;
-    margin-right: -45px;
-  }
-  @media all and (min-width:100px) and (max-width:500px){
-    margin-left: -15px;
-    margin-right: -15px;
-  }
+
+  margin: auto 2% 1px 2%;
+
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .home-list-image {
@@ -30,11 +24,6 @@
 .home-list-background-image {
   width: 100%;
   height: 200px;
-
-  @media all and (min-width:100px) and (max-width:1024px){
-    width: 100%;
-    height: 140px;
-  }
 
   background-size: cover;
 }
@@ -53,10 +42,6 @@
 }
 
 .home-list-body-text {
-  @media all and (min-width:100px) and (max-width:1024px){
-    margin-top: -10px;
-    margin-left: 5px;
-  }
   vertical-align: top;
   padding-left: 1%;
 }

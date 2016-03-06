@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905073125) do
+ActiveRecord::Schema.define(version: 20160306061121) do
 
   create_table "image_assets", force: true do |t|
     t.string   "slug"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150905073125) do
     t.datetime "updated_at"
     t.string   "file"
     t.string   "state",      default: "hide"
+    t.integer  "view_count", default: 0
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
