@@ -7,7 +7,10 @@
   </div>
   <div class="col-xs-6 col-md-6 align-center visible-lg visible-md"><h1 class="WF-thin align-center"><%= @post.title %></h1></div>
   <div class="col-xs-6 col-md-6 align-center visible-sm"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>
-  <div class="col-xs-3 col-md-3 align-right header-date visible-lg visible-md visible-sm"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+  <div class="col-xs-3 col-md-3 align-right header-date visible-lg visible-md visible-sm">
+    <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %><br>
+    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View : <%= @post.view_count %>
+  </div>
 </div>
 
 <div class="row post-top visible-xs">
@@ -17,7 +20,10 @@
     <% end %>
   </div>
 
-  <div class="col-xs-6 col-md-6 align-right header-date"> <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %> </div>
+  <div class="col-xs-6 col-md-6 align-right header-date">
+    <%= @post.created_at.strftime('%Y-%m-%d %H:%M') %><br>
+    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View : 0
+  </div>
 </div>
 <div class="row post-top visible-xs" style="margin-top:-30px;">
   <div class="col-xs-12 col-md-12 align-center"><h3 class="WF-thin align-center"><%= @post.title %></h3></div>

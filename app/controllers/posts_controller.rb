@@ -13,6 +13,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post.view_count += 1
+    @post.save
+
     respond_with(@post)
   end
 
@@ -50,7 +53,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :state, :tag_list)
+      params.require(:post).permit(:title, :user, :contents, :file, :file_cache, :state, :tag_list, :view_count)
     end
 
     def load_image_set
