@@ -8,7 +8,7 @@
          img_srcs = doc.css('img').map{ |i| i['src'] }[0]
       %>
       <% if img_srcs %>
-        <div class="home-list-background-image" style="background-image: url(<%= img_srcs %>);"></div>
+        <div class="home-list-background-image" style="background-position:center; background-image: url(<%= img_srcs %>);"></div>
       <% end %>
     </div>
     <div class="home-list-body">
