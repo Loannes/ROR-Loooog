@@ -22,7 +22,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     load_image_set
-    respond_with(@post)
+
+    render layout: 'post'
   end
 
   def edit
