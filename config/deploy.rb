@@ -10,6 +10,8 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default values
 set :rails_env, "production"
 
+set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
+
 namespace :deploy do
 
   after :restart, :clear_cache do
