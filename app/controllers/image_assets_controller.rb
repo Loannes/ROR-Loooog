@@ -7,19 +7,22 @@ class ImageAssetsController < ApplicationController
 
   def index
     @image_assets = ImageAsset.all
-    respond_with(@image_assets)
+
+    render layout: 'post'
   end
 
   def show
-    respond_with(@image_asset)
+    render layout: 'post'
   end
 
   def new
     @image_asset = ImageAsset.new
-    respond_with(@image_asset)
+
+    render layout: 'post'
   end
 
   def edit
+    render layout: 'post'
   end
 
   def create

@@ -10,6 +10,8 @@ class SinController < ApplicationController
     else
       @posts = Post.all.order("CREATED_AT DESC")
     end
+
+    render layout: 'post'
   end
 
   def show
@@ -24,6 +26,8 @@ class SinController < ApplicationController
 
   def edit
     load_image_set
+
+    render layout: 'post'
   end
 
   def create
