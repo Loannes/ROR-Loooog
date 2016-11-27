@@ -4,4 +4,6 @@
 
 * Ruby On Rails
 
+구지 이걸 쓰고 싶다면...
 MIT License
+말리진 않겠...다
