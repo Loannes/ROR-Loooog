@@ -10,7 +10,7 @@ gem 'redcarpet'
 
 
 
-# 회원인증 및 권한설정을 위한 젬
+# 회원인증 및 권한설정을 위한 젬 11212
 gem 'devise'     # 회원가입 및 인증
 gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
